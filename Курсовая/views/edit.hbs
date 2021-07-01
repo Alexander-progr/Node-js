@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>Изменить данные</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" type="text/css" href="/css/style.css" />
+    <style>.field{width:200px;}</style>
+</head>
+
+<body>
+    <h1>Изменить данные о</h1>
+    <form action="/edit" method="POST">
+        <input type="hidden" name="id" value="{{serials.id}}" />
+        
+        <label>Названеи</label><br>
+        <input name="firstName" class="field" value="{{serials.name}}" /><br><br>
+
+        <label>Количество сезонов</label><br>
+        <input name="lastName" class="field" value="{{serials.seasons}}" /><br><br>
+
+        <label>Год выпуска</label><br>
+        <input name="city" class="field" value="{{serials.data}}" /><br><br>
+
+        <label>Страна</label><br>
+        <input name="city" class="field" value="{{serials.country}}" /><br><br>
+
+        <label>Рейтинг</label><br>
+        <input name="rating" type="number" class="field" min="0" max="300" value="{{serials.rating}}" /><br><br>
+        
+        <input type="submit" value="Сохранить" id="sub"/>
+    </form><br><br>
+    <form action="/" method="GET" style="display: inline;">
+        <input type="submit" value="На главную" id="sub">
+    </form>
+</body>
+
+<html>

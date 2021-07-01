@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>Добавить сериал</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" type="text/css" href="/css/style.css" />
+    <style>.field{width:200px;}</style>
+</head>
+
+<body>
+    <h1>Добавить сериал</h1>
+    <form method="POST">    
+
+        <label>Название</label><br>
+        <input name="name" class="field" /><br><br>
+
+        <label>Количество сезонов</label><br>
+        <input name="season" class="field" /><br><br>
+        
+        <label>Год выпуска</label><br>
+        <input name="data" class="field" /><br><br>
+
+        <label>Страна</label><br>
+        <input name="country" class="field" /><br><br>
+
+		<label>Рейтинг</label><br>
+        <input name="rating" class="field" pattern="\d{1,2}\.\d{0,4}" /><br><br>
+        
+        <input type="submit" value="Сохранить" id="sub"/>
+    </form><br><br>
+    <form action="/" method="GET" style="display: inline;">
+        <input type="submit" value="На главную" id="sub">
+    </form>
+</body>
+
+<html>

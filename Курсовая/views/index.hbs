@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>Список сериалов</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" type="text/css" href="/css/style.css" />
+    <style>.field{width:200px;}</style>
+</head>
+
+<body>
+    <center>
+    <h3>Список сериалов</h1>
+    <form action="/clear" method="GET" style="display: inline;">
+        <input type="submit" value="Очистить список" id="sub">
+    </form>
+    <form action="/" method="GET" style="display: inline;">
+        <input type="submit" value="Сбросить сортировку" id="sub">
+    </form>
+    <form action="/create" method="GET" style="display: inline;">
+        <input type="submit" value="Добавить сериал" id="sub">
+    </form><br><br>
+    <table>
+        <tr>
+            <th>Редактор</th>
+            <th>Название</th>
+            <th>Количество сезонов&nbsp;<a href="/sort/season.ASC" id="s">▲</a><a href="/sort/season.DESC" id="s">▼</a></th>
+            <th>Год выпуска&nbsp;<a href="/sort/data.ASC" id="s">▲</a><a href="/sort/data.DESC" id="s">▼</a></th>
+            <th>Страна</th>
+            <th>Рейтинг&nbsp;<a href="/sort/rating.ASC" id="s">▲</a><a href="/sort/rating.DESC" id="s">▼</a></th>
+        </tr>
+        {{#each serials}}
+            <tr>
+                <td width=180 class="editor">
+                    <form action="/edit/{{this.id}}" method="GET" style="display:inline;">
+                        <input type="submit" value="Изменить" id="but" />
+                    </form>
+                    <form action="/delete/{{this.id}}" method="POST" style="display:inline;">
+                        <input type="submit" value="Удалить" id="but" />
+                    </form>
+                </td>
+                <td>{{this.name}}</td>
+                <td>{{this.season}}</td>
+                <td>{{this.data}}</td>
+                <td>{{this.country}}</td>
+                <td align = "center">{{this.rating}}</td>
+            </tr>
+        {{/each}}
+    </table>
+    </center>
+</body>
+
+<html>
